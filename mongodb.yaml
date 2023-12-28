@@ -1,0 +1,8 @@
+- name: mongodb debugger
+  host: mongodb
+  become: yes
+  tasks: 
+  - name: Print a message
+    ansible.builtin.debug:
+      msg: "Task started!"
+
