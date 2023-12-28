@@ -10,6 +10,6 @@
         msg: "Task started!"
     - name: Move mongo.repo file
       ansible.builtin.copy:
-        src: ansible_self/mongo.repo
+        src: mongo.repo
         dest: /etc/yum.repos.d/mongo.repo
 
