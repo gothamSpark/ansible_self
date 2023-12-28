@@ -1,8 +1,11 @@
-- name: mongodb debugger
-  host: mongodb
+
+
+---
+- name: MongoDB Debugger
+  hosts: mongodb  # Replace 'your_target_host' with the actual host or group name
   become: yes
-  tasks: 
-  - name: Print a message
-    ansible.builtin.debug:
-      msg: "Task started!"
+  tasks:
+    - name: Print a message
+      ansible.builtin.debug:
+        msg: "Task started!"
 
