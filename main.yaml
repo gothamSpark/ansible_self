@@ -1,0 +1,4 @@
+- name : "working on {{component}} component"
+  host : localhost
+  become : yes
+  roles: - "{{component}}"
