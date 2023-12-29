@@ -1,4 +1,5 @@
-- name : "working on {{component}} component"
-  host : localhost
-  become : yes
-  roles: - "{{component}}"
+- name: "Working on {{ component }} component"  # Ensure consistent indentation
+  hosts: localhost  # Use "hosts" instead of "host"
+  become: yes
+  roles:
+    - "{{ component }}"  # Indent "roles" under "become"
