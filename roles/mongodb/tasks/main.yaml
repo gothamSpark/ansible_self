@@ -1,34 +1,29 @@
 
 
----
-- name: MongoDB Debugger
-  hosts: localhost  # Replace 'your_target_host' with the actual host or group name
-  become: yes
-  tasks:
-    - name: Print a message
-      ansible.builtin.debug:
-        msg: "Task started!"
-    - name: Move mongo.repo file
-      ansible.builtin.copy:
-        src: ../files/mongo.repo
-        dest: /etc/yum.repos.d/mongo.repo
-    - name: Install MongoDB
-      ansible.builtin.package:
-        name: mongodb-org
-        state: present
-    - name: Enable and start MongoDB service
-      ansible.builtin.service:
-        name: mongod
-        enabled: yes
-        state: started
-    - name: allow remote conncections
-      ansible.builtin.replace:
-        path: /etc/mongod.conf
-        regexp: '127.0.0.1'
-        replace: '0.0.0.0'
-    - name: start and enable mongodb
-      ansible.builtin.service:
-        name: mongod
-        state: restarted
-         
+- name: Print a message
+  ansible.builtin.debug:
+    msg: "Task started!"
+- name: Move mongo.repo file
+  ansible.builtin.copy:
+    src: ../files/mongo.repo
+    dest: /etc/yum.repos.d/mongo.repo
+- name: Install MongoDB
+  ansible.builtin.package:
+    name: mongodb-org
+    state: present
+- name: Enable and start MongoDB service
+  ansible.builtin.service:
+    name: mongod
+    enabled: yes
+    state: started
+- name: allow remote conncections
+  ansible.builtin.replace:
+    path: /etc/mongod.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+- name: start and enable mongodb
+  ansible.builtin.service:
+    name: mongod
+    state: restarted
+      
 
