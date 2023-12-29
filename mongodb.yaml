@@ -2,7 +2,7 @@
 
 ---
 - name: MongoDB Debugger
-  hosts: mongodb  # Replace 'your_target_host' with the actual host or group name
+  hosts: localhost  # Replace 'your_target_host' with the actual host or group name
   become: yes
   tasks:
     - name: Print a message
